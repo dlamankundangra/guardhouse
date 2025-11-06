@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guardhouse — Kemas Kini</title>
+  <meta name="theme-color" content="#0f766e" />
+
+  <!-- Minimal, clean styling -->
+  <style>
+    :root{
+      --bg:#0b1320; --card:#111827; --muted:#94a3b8; --brand:#0ea5a6; --brand-2:#0f766e; --txt:#e5e7eb;
+      --radius:16px; --max:880px;
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Noto Sans",Arial,sans-serif;
+      background:radial-gradient(1200px 1200px at 10% -10%, #0b3140 0, #0b1320 40%) no-repeat fixed;
+      color:var(--txt); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    header{
+      max-width:var(--max); margin:28px auto 0; padding:0 16px;
+      display:flex; align-items:center; gap:14px;
+    }
+    .logo{inline-size:40px; block-size:40px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; font-weight:700}
+    .logo span{font-size:18px;color:white}
+    .title h1{font-size:22px; margin:0 0 4px; font-weight:700}
+    .title p{margin:0; color:var(--muted); font-size:13px}
+    main{
+      max-width:var(--max); margin:16px auto 40px; padding:0 16px;
+    }
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+      overflow:hidden;
+    }
+    .card header{
+      padding:18px 20px; margin:0; justify-content:space-between;
+    }
+    .badge{
+      background:rgba(14,165,166,0.15); color:#a7f3d0; border:1px solid rgba(45,212,191,0.35);
+      padding:4px 10px; border-radius:999px; font-size:12px; letter-spacing:.2px;
+    }
+    section{padding:8px 20px 20px}
+    h2{font-size:16px; margin:16px 0 6px}
+    ul{margin:8px 0 0 0; padding:0 0 0 20px}
+    li{margin:8px 0; line-height:1.5}
+    footer{max-width:var(--max); margin:0 auto 48px; padding:0 16px; color:var(--muted); font-size:12px}
+    .install{
+      margin-left:auto; appearance:none; border:none; cursor:pointer;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:white;
+      padding:8px 12px; border-radius:10px; font-weight:600;
+      box-shadow:0 6px 18px rgba(14,165,166,.3);
+    }
+    .install[hidden]{display:none}
+    a{color:#7dd3fc}
+    @media (prefers-color-scheme: light){
+      body{background:linear-gradient(#f6f9ff,#edf2ff)}
+      .card{background:linear-gradient(180deg,rgba(0,0,0,0.02),rgba(0,0,0,0.01)); border-color:rgba(0,0,0,0.08)}
+      .badge{background:rgba(14,165,166,0.12); color:#065f46; border-color:rgba(14,165,166,0.4)}
+      .title p{color:#475569}
+      footer{color:#64748b}
+    }
+  </style>
+
+  <link id="pwa-manifest" rel="manifest" href="">
+  <link rel="apple-touch-icon" id="apple-icon" href="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+  <header>
+    <div class="logo" aria-hidden="true"><span>GH</span></div>
+    <div class="title">
+      <h1>Guardhouse — Kemas Kini</h1>
+      <p>Boleh dibuka di desktop & telefon. Sokong pemasangan (PWA).</p>
+    </div>
+    <button id="installBtn" class="install" hidden>Pasang Aplikasi</button>
+  </header>
+
+  <main>
+    <article class="card" aria-labelledby="tajuk">
+      <header>
+        <div class="badge">Status Terkini</div>
+        <div id="updatedAt" class="badge" style="opacity:.85"></div>
+      </header>
+      <section>
+        <p style="margin:0 0 8px; color:var(--muted)">Update berkaitan status guardhouse ( kawalan keselamatan di rumah kita )</p>
+
+        <h2>Sekarang ini</h2>
+        <ul>
+          <li>Sedang memohon TOL (permit sementara) dari pejabat tanah untuk menyegerakan kelulusan tapak pembinaan guardhouse.</li>
+          <li>Perlu sediakan lukisan pelan (lakaran tanah & guardhouse).</li>
+        </ul>
+
+        <h2>Apa yang kita sudah ada</h2>
+        <ul>
+          <li>Dana — boleh digunakan untuk proses pembinaan guardhouse.</li>
+          <li>Kelulusan awal MPS untuk guardhouse 12 kaki × 6 kaki.</li>
+        </ul>
+
+        <h2>Apa yang perlu dibuat</h2>
+        <ul>
+          <li>Mendapatkan wakil penduduk untuk berurusan dengan pejabat tanah.</li>
+          <li>Dapatkan Arkitek / Juruukur / Jurubina untuk lukis pelan pembinaan.</li>
+        </ul>
+
+        <h2>Jika kelulusan mengambil masa lama</h2>
+        <ul>
+          <li>Pertimbangkan pembelian <em>portable guardhouse</em> menggunakan dana sedia ada.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>
+      Tip: Tambah ke skrin utama / “Install App” untuk akses pantas walaupun offline. Dikuasakan oleh GitHub Pages.
+    </p>
+  </footer>
+
+  <script>
+  // --- Helper: format date ---
+  (function(){
+    const el = document.getElementById('updatedAt');
+    const d = new Date();
+    const fmt = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+    el.textContent = 'Dikemas kini: ' + fmt.format(d);
+  })();
+
+  // --- Generate PNG icon data URLs on the fly so this can stay ONE FILE ---
+  async function iconDataURL(size){
+    const c = document.createElement('canvas');
+    c.width = c.height = size;
+    const g = c.getContext('2d');
+
+    // Background gradient
+    const grad = g.createLinearGradient(0,0,size,size);
+    grad.addColorStop(0,'#0ea5a6'); grad.addColorStop(1,'#0f766e');
+    g.fillStyle = grad; g.fillRect(0,0,size,size);
+
+    // "GH" monogram
+    g.fillStyle='#ffffff';
+    g.font = Math.round(size*0.48)+'px system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial';
+    g.textAlign='center'; g.textBaseline='middle';
+    g.fillText('GH', size/2, size/2 + size*0.02);
+
+    return c.toDataURL('image/png');
+  }
+
+  // --- Create a manifest dynamically and attach it ---
+  (async function attachManifest(){
+    const icon192 = await iconDataURL(192);
+    const icon512 = await iconDataURL(512);
+
+    const manifest = {
+      name: "Guardhouse — Kemas Kini",
+      short_name: "Guardhouse",
+      start_url: "./",
+      scope: "./",
+      display: "standalone",
+      background_color: "#0b1320",
+      theme_color: "#0f766e",
+      icons: [
+        { src: icon192, sizes: "192x192", type: "image/png", purpose: "any maskable" },
+        { src: icon512, sizes: "512x512", type: "image/png", purpose: "any maskable" }
+      ]
+    };
+
+    const blob = new Blob([JSON.stringify(manifest)], {type: 'application/manifest+json'});
+    const url = URL.createObjectURL(blob);
+    document.getElementById('pwa-manifest').setAttribute('href', url);
+
+    // Apple touch icon (re-use 192)
+    document.getElementById('apple-icon').setAttribute('href', icon192);
+  })();
+
+  // --- Install prompt button (PWA) ---
+  let deferredPrompt;
+  const installBtn = document.getElementById('installBtn');
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.hidden = false;
+  });
+  installBtn.addEventListener('click', async () => {
+    installBtn.hidden = true;
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    }
+  });
+
+  // --- One-file Service Worker via Blob (offline cache of this page) ---
+  (function registerSW(){
+    if (!('serviceWorker' in navigator)) return;
+
+    const swCode = `
+      const CACHE = 'guardhouse-offline-v1';
+      self.addEventListener('install', (e) => {
+        e.waitUntil((async () => {
+          const cache = await caches.open(CACHE);
+          // Cache the root HTML itself
+          await cache.add(new Request(self.registration.scope, {cache:'reload'}));
+          self.skipWaiting();
+        })());
+      });
+
+      self.addEventListener('activate', (e) => {
+        e.waitUntil((async () => {
+          const keys = await caches.keys();
+          await Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)));
+          self.clients.claim();
+        })());
+      });
+
+      self.addEventListener('fetch', (e) => {
+        const req = e.request;
+        // Basic offline-first for same-origin GET requests
+        if (req.method === 'GET' && new URL(req.url).origin === location.origin) {
+          e.respondWith((async () => {
+            const cache = await caches.open(CACHE);
+            const cached = await cache.match(req);
+            if (cached) return cached;
+            try {
+              const res = await fetch(req);
+              // Only cache successful, basic navigation/doc/image/css/js
+              if (res && res.status === 200 && res.type !== 'opaque') {
+                cache.put(req, res.clone());
+              }
+              return res;
+            } catch (err) {
+              // Fallback to cached root when offline navigation
+              if (req.mode === 'navigate') {
+                return cache.match(self.registration.scope);
+              }
+              throw err;
+            }
+          })());
+        }
+      });
+    `;
+
+    const blob = new Blob([swCode], {type: 'text/javascript'});
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl, { scope: './' }).catch(console.error);
+  })();
+  </script>
+</body>
+</html>
